@@ -251,8 +251,13 @@ body {
   padding: 1rem;
 }
 
-.owner-name {
+.owner-name,
+.owner-name a {
   color: rgb(var(--primary));
+}
+.owner-name a {
+  position: relative;
+  z-index: 200;
 }
 
 @media screen and (min-width: 600px) {
