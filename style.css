@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 :root {
   --primary: 246, 102, 0;
-  --secondary: 214, 120, 32;
+  --secondary: 224, 130, 32;
   --dark: 25, 25, 25;
   --black: 0, 0, 0;
   --grey: 32, 32, 36;
@@ -28,14 +28,14 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  height: 90vh;
-  height: 90svh;
+  height: 100vh;
+  height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: 2rem;
-  box-shadow: inset 0px -90vh rgba(var(--black), 0.4),
+  box-shadow: inset 0px -100vh rgba(var(--black), 0.4),
     inset 0px -20vh 100px 10px rgba(var(--black), 0.5);
 }
 .index-section > h1 {
@@ -52,4 +52,127 @@ body {
 .intro-section {
   margin: 0.5rem;
   text-align: center;
+}
+
+.our-services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.our-services > h1 {
+  position: relative;
+}
+.our-services > h1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background-image: linear-gradient(
+    -90deg,
+    rgb(var(--primary)),
+    rgb(var(--secondary))
+  );
+}
+
+.cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card-wrapper {
+  padding: 1rem;
+  box-shadow: 5px 5px 5px rgba(var(--black), 0.4),
+    -5px -5px 5px rgba(var(--light), 0.1),
+    inset 5px 5px 5px rgba(var(--black), 0.4),
+    inset -5px -5px 5px rgba(var(--light), 0.1);
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.card {
+  width: 300px;
+  max-width: 80vw;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+  backdrop-filter: blur(50px);
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(var(--black), 0.4),
+    -3px -3px 3px rgba(var(--light), 0.1),
+    inset 3px 3px 3px rgba(var(--light), 0.1),
+    inset -3px -3px 3px rgba(var(--black), 0.4);
+  transition: 0.3s ease;
+  overflow: hidden;
+  transform: translateY(0%);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  top: 0;
+  left: -20%;
+  z-index: -1;
+  /* background-color: rgb(83, 83, 83); */
+  background-image: linear-gradient(
+    -90deg,
+    rgba(var(--primary), 0.5),
+    rgba(var(--primary), 0)
+  );
+  opacity: 0.1;
+  transform: skew(-25deg);
+  transition: 0.3s ease;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  left: 10px;
+  bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(var(--light), 0.1);
+  transition: 0.3s ease;
+}
+.card:hover::after {
+  border: 1px solid rgba(var(--light), 0.4);
+}
+.card .number {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  font-size: 4rem;
+  color: rgba(var(--light), 0.1);
+}
+.card-title {
+  transition: 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10%);
+}
+@keyframes cardtransition {
+  0% {
+    transform: translateX(0) skew(-25deg);
+  }
+  100% {
+    transform: translateX(180%) skew(-25deg);
+  }
+}
+.card:hover::before {
+  animation-name: cardtransition;
+  animation-duration: 0.3s;
+  transform: translateX(-300%) skew(-25deg);
+}
+.card:hover .card-title {
+  color: rgb(var(--primary));
 }
