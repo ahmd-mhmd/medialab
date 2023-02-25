@@ -54,16 +54,16 @@ body {
   text-align: center;
 }
 
-.our-services {
+.section-title {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.our-services > h1 {
+.section-title > h1 {
   position: relative;
 }
-.our-services > h1::before {
+.section-title > h1::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -82,7 +82,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .card-wrapper {
@@ -123,7 +123,6 @@ body {
   top: 0;
   left: -20%;
   z-index: -1;
-  /* background-color: rgb(83, 83, 83); */
   background-image: linear-gradient(
     -90deg,
     rgba(var(--primary), 0.5),
@@ -175,4 +174,107 @@ body {
 }
 .card:hover .card-title {
   color: rgb(var(--primary));
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.owner-wrapper {
+  width: 80vw;
+  height: 300px;
+  /* width: 400px; */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  background-color: rgb(var(--grey));
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease;
+  box-shadow: 3px 3px 3px rgba(var(--black), 0.4),
+    -3px -3px 3px rgba(var(--light), 0.1),
+    inset 3px 3px 3px rgba(var(--light), 0.1),
+    inset -3px -3px 3px rgba(var(--black), 0.4);
+}
+
+.owner-wrapper::before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  border-radius: 10px;
+  border: 2px solid rgba(var(--primary), 0.2);
+  transition: 0.3s ease;
+}
+.owner-wrapper:hover::before {
+  border: 2px solid rgba(var(--primary), 0.8);
+}
+
+.owner-wrapper:hover {
+  box-shadow: 3px 3px 3px rgba(var(--black), 0.4),
+    -3px -3px 3px rgba(var(--light), 0.1),
+    inset 3px 3px 3px rgba(var(--light), 0.1),
+    inset -3px -3px 3px rgba(var(--black), 0.4),
+    0 0 30px 10px rgba(var(--primary), 0.2);
+}
+
+.owner-img-wrapper {
+  overflow: hidden;
+}
+
+.owner-img {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0px -100px 50px rgba(var(--dark), 0.5);
+}
+.owner-wrapper:nth-child(1) .owner-img {
+  background-image: url("./assests/ibrahimbrayteh.jpeg");
+}
+.owner-wrapper:nth-child(2) .owner-img {
+  background-image: url("./assests/mhmdissa.jpeg");
+}
+
+.owner-intro {
+  padding: 1rem;
+}
+
+.owner-name {
+  color: rgb(var(--primary));
+}
+
+@media screen and (min-width: 600px) {
+  .owner-img-wrapper {
+    height: 100%;
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .owner-wrapper {
+    flex-direction: column;
+    min-height: 700px;
+    width: 80vw;
+  }
+  .owner-img-wrapper {
+    height: 500px;
+    width: 100%;
+    background-color: green;
+  }
+  .owner-img {
+    width: 100%;
+    height: 100%;
+  }
 }
