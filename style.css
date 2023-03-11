@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 :root {
   --primary: 246, 102, 0;
   --secondary: 244, 150, 32;
@@ -41,6 +42,15 @@ body {
 }
 .index-section > h1 {
   font-weight: 400;
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  text-shadow: 0px 0px 10px rgba(var(--primary), 1);
+}
+.index-section > h5 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-family: monospace;
 }
 .index-section .discover-btn {
   background-color: transparent;
@@ -82,11 +92,22 @@ body {
   margin: 0.5rem;
   text-align: center;
 }
+.intro-section > h1 {
+  font-family: "Ubuntu", sans-serif;
+}
 
 .section-title {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.section-title > h1 {
+  font-size: 3rem;
+  transition: 0.3s ease;
+}
+
+.section-title > h1:hover {
+  text-shadow: 0 0 20px rgba(var(--primary), 0.6);
 }
 
 .section-title > h1 {
@@ -129,7 +150,7 @@ body {
   max-width: 80vw;
   height: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
   flex-direction: column;
   position: relative;
@@ -169,20 +190,26 @@ body {
   left: 10px;
   bottom: 10px;
   border-radius: 10px;
-  border: 1px solid rgba(var(--light), 0.1);
+  border: 1px solid rgba(var(--primary), 0.1);
   transition: 0.3s ease;
 }
 .card:hover::after {
-  border: 1px solid rgba(var(--light), 0.4);
+  border: 1px solid rgba(var(--primary), 0.4);
 }
 .card .number {
   position: absolute;
   right: 1rem;
   top: 0;
-  font-size: 4rem;
+  font-size: 3rem;
   color: rgba(var(--light), 0.1);
+  transition: 0.3s ease;
+}
+.card:hover .number {
+  color: rgba(var(--light), 0.6);
+  text-shadow: 0px 0px 10px rgba(var(--light), 0.4);
 }
 .card-title {
+  font-size: 1.7rem;
   transition: 0.3s ease;
 }
 .card:hover {
@@ -233,7 +260,7 @@ body {
     inset -3px -3px 3px rgba(var(--black), 0.4);
 }
 
-.owner-wrapper::before {
+/* .owner-wrapper::before {
   position: absolute;
   content: "";
   top: 10px;
@@ -241,11 +268,11 @@ body {
   bottom: 10px;
   left: 10px;
   border-radius: 10px;
-  border: 2px solid rgba(var(--primary), 0.2);
-  transition: 0.3s ease;
-}
+  /* border: 2px solid rgba(var(--primary), 0.2); */
+/* transition: 0.3s ease; */
+/* } */
 .owner-wrapper:hover::before {
-  border: 2px solid rgba(var(--primary), 0.8);
+  /* border: 2px solid rgba(var(--primary), 0.8); */
 }
 
 .owner-wrapper:hover {
@@ -286,6 +313,84 @@ body {
 .owner-name a {
   position: relative;
   z-index: 200;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+}
+
+.footer .footer-title,
+.footer .contact-title {
+  /* margin-bottom: 3.5rem; */
+  text-align: center;
+  margin: 1rem;
+  font-size: 3rem;
+  position: relative;
+}
+
+.footer .contact-title {
+  font-size: 2.5rem;
+}
+
+.footer .footer-title::before,
+.footer .contact-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 5px;
+  background-image: linear-gradient(
+    -90deg,
+    rgb(var(--primary)),
+    rgb(var(--secondary))
+  );
+}
+
+.footer .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.footer li {
+  list-style-type: none;
+  position: relative;
+}
+
+.footer .sm {
+  position: relative;
+}
+
+.footer .sm::before {
+  position: absolute;
+  content: attr(data-text);
+  color: rgb(var(--color));
+  overflow: hidden;
+  width: 0%;
+  transition: 0.5s ease;
+  text-decoration: underline;
+  border-right: 0px solid rgb(var(--color));
+}
+
+.footer .sm:hover::before {
+  width: 100%;
+  text-shadow: 0 0 10px rgba(var(--color), 0.6);
+  border-right-width: 2px;
 }
 
 @media screen and (min-width: 600px) {
