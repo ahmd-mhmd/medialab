@@ -286,6 +286,9 @@ body {
 .owner-img-wrapper {
   overflow: hidden;
 }
+.owner-img-wrapper:nth-child(1) .owner-img {
+	background-image: url("./assests/mhmdissa.jpeg");
+}
 
 .owner-img {
   width: 100%;
