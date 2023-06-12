@@ -296,9 +296,6 @@ body {
   box-shadow: inset 0px -100px 50px rgba(var(--dark), 0.5);
 }
 .owner-wrapper:nth-child(1) .owner-img {
-  background-image: url("./assests/ibrahimbrayteh.jpeg");
-}
-.owner-wrapper:nth-child(2) .owner-img {
   background-image: url("./assests/mhmdissa.jpeg");
 }
 
